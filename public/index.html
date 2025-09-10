@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Painel de Manutenções</title>
+</head>
+<body>
+<h1>Painel de Manutenções</h1>
+<table border="1" id="events">
+  <thead>
+    <tr><th>Equipamento</th><th>Tarefa</th><th>Data</th><th>Calendário</th></tr>
+  </thead>
+  <tbody></tbody>
+</table>
+<script>
+fetch('/events').then(r => r.json()).then(events => {
+  const tbody = document.querySelector('#events tbody');
+  events.forEach(ev => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${ev.equipment}</td><td>${ev.task}</td><td>${ev.date}</td><td><a href="/ics?id=${encodeURIComponent(ev.id)}">Salvar</a></td>`;
+    tbody.appendChild(tr);
+  });
+});
+</script>
+</body>
+</html>
