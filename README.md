@@ -44,3 +44,15 @@
 <br>
 <img src="https://komarev.com/ghpvc/?username=rhuanbello&label=Visits">
 <img src="https://wakatime.com/badge/user/7c8afd8e-6490-43bb-b980-a081626d34af.svg">
+
+## Sistema de Planejamento de Manutenções
+
+Este repositório contém um exemplo simples de servidor Node.js que lê planilhas CSV para gerar um painel de futuras manutenções de equipamentos. O painel permite baixar eventos no formato iCalendar e o servidor emite lembretes no console para manutenções que ocorrerão em até 7 dias.
+
+### Como executar
+
+```
+node server.js
+```
+
+Acesse `http://localhost:3000` no navegador para visualizar o painel.
